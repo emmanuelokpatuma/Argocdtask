@@ -10,7 +10,7 @@ spec:
     targetRevision: master
     path: .
   destination:
-    server: https://<prod-cluster-api>  # you’ll need prod cluster added to ArgoCD
+    server: https://192.168.58.2:8443    # your prod cluster API server
     namespace: default
   syncPolicy:
     automated:
