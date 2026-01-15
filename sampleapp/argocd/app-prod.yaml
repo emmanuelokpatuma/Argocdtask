@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sampleapp-prod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/emmanuelokpatuma/Argocdtask
+    targetRevision: master
+    path: .
+  destination:
+    server: https://<prod-cluster-api>  # you’ll need prod cluster added to ArgoCD
+    namespace: default
+  syncPolicy:
+    automated:
+      selfHeal: true
